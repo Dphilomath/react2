@@ -64,7 +64,7 @@ export default class Desc extends Component{
        
         return (
             <div className="items">
-                <img className="desc" src={this.state.url} alt="Loading Image"></img>
+                <img className="desc" src={this.state.url} alt="Loading"></img>
                 <div className="comment">
                     <h3>
                         Reviews

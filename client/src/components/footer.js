@@ -28,8 +28,8 @@ function Footer(){
                     </ul>
                 </div>
                 <div className="icons"> 
-                <a href="https://www.facebook.com/daniyalmahmood123/" target="_blank"><FontAwesomeIcon className="icon" icon={faFacebookSquare}/></a>    
-                <a href="https://github.com/Dphilomath" target="_blank"><FontAwesomeIcon className="icon" icon={faGithub}/></a>   
+                <a href="https://www.facebook.com/daniyalmahmood123/" rel="noreferrer" target="_blank"><FontAwesomeIcon className="icon" icon={faFacebookSquare}/></a>    
+                <a href="https://github.com/Dphilomath" target="_blank" rel="noreferrer"><FontAwesomeIcon className="icon" icon={faGithub}/></a>   
                 </div>               
         </div>
     )
