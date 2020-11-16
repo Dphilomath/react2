@@ -16,9 +16,13 @@ export default class Menu extends Component
         }
     }
     componentDidMount() {
-        fetch("/api/items")
+        fetch("/api/items",{
+            headers:{
+                'Accept':'applocation/json'
+            }
+        })
         .then(response => response.json())
-        .then( responseJson=> {
+        .then( responseJson => {
           this.setState({ items : responseJson });
         }
       )}
