@@ -3,9 +3,10 @@ var jwt = require('jsonwebtoken');
 var secret = process.env.secret
 
 function verifyToken(req, res, next) {
-  var token=null
-  if(req.headers.cookie)
-   token = req.headers.cookie.split('=')[1];
+  // console.log(req.cookies)
+  var token=req.cookies.authorization
+  // if(req.headers.cookie)
+  //  token = req.headers.cookie.split('=')[1];
   // console.log(req.cookie);
 
   if (!token) 

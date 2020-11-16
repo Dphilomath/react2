@@ -55,7 +55,6 @@ router.get("/me", VerifyToken, function (req, res, next) {
 });
 
 router.post("/login", function (req, res) {
-  
   User.findOne({ email: req.body.email }, function (err, user) {
     if (err) {
       console.log(err)
