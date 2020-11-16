@@ -16,7 +16,7 @@ export default class Menu extends Component
         }
     }
     componentDidMount() {
-        fetch("/api/items",{
+        fetch("https://react--backend.herokuapp.com/api/items",{
             headers:{
                 'Accept':'application/json'
             }
@@ -36,7 +36,7 @@ export default class Menu extends Component
                     <div key={item._id}>
                         <figure style={{textAlign:"center"}}>
                             <Link to={path}>
-                                <img src={item.imgurl} className="thumbnail" alt="my img"/>   
+                                <img src={item.imgurl} className="thumbnail" alt="thumbnail"/>   
                             </Link>
                             <figcaption>{item.name}</figcaption>
                         </figure>

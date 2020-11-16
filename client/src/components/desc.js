@@ -23,7 +23,7 @@ export default class Desc extends Component{
         let id = this.props.match.params.id
 
 //post a comment
-        fetch(`/api/comments/${id}`, {
+        fetch(`https://react--backend.herokuapp.com/api/comments/${id}`, {
             method:"POST",
             headers:{
                 "Content-Type":'application/json'
@@ -39,8 +39,8 @@ export default class Desc extends Component{
 
    async componentDidMount(){
         const id = this.props.match.params.id
-        let imgLink = `/api/items/${id}`
-        let commentsLink = `/api/comments/${id}`
+        let imgLink = `https://react--backend.herokuapp.com/api/items/${id}`
+        let commentsLink = `https://react--backend.herokuapp.com/api/comments/${id}`
 
         //fetch all related comments and image link and set them in state
         let fetchedComment = await axios.get(commentsLink).then(response => response.data.comments)

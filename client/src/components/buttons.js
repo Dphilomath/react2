@@ -7,7 +7,7 @@ class LogoutButton extends React.Component{
 
     }
     handleClick(){
-        fetch("/user/logout", {
+        fetch("https://react--backend.herokuapp.com/user/logout", {
             method:"get"
         }).then(res=>res.json).then(res=>{
             // if (res.status===200)  

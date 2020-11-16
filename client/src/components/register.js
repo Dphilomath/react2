@@ -25,7 +25,7 @@ export default class Register extends Component{
      handleSubmit(event){
         const body = this.state
         // const user = 
-         fetch("/user/register", {
+         fetch("https://react--backend.herokuapp.com/user/register", {
             method:"POST",
             
             body: JSON.stringify(body),

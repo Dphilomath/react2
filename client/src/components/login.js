@@ -24,7 +24,7 @@ export default class Login extends Component{
     
     handleSubmit(event){
             const body = this.state
-            fetch("/user/login", {
+            fetch("https://react--backend.herokuapp.com/user/login", {
                 method:"POST",
                 body: JSON.stringify(body),
                 headers:{

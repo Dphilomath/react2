@@ -13,7 +13,7 @@ class Button extends React.Component{
         }
     }
     componentDidMount(){
-        fetch("/user/check").then(res=>{
+        fetch("https://react--backend.herokuapp.com/user/check").then(res=>{
           if(res.status===200){
             this.setState({
               isLoggedIn:true
