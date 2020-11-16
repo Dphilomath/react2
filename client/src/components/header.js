@@ -1,12 +1,15 @@
 import React from "react"
 import {LogoutButton, LoginButton} from "./buttons"
+import {BrowserRouter as Router, Route} from "react-router-dom"
 
 
 class Button extends React.Component{
     constructor(props){
         super(props)
         this.state={
-            isLogedIn: false
+            isLogedIn:{
+              type:Boolean
+            }
         }
     }
     componentDidMount(){
@@ -37,10 +40,13 @@ class Header extends React.Component{
                 <a href="/about">About Us</a>
                 <a href="/menu">Menu</a>
                 <a href="/contact">Contact</a>
-                <Button />
+                <Router>
+                  <Route component={Button} />
+                </Router>
+                
           </div>
           <div className="container">
-          <h2>Welcome to our bakery</h2>
+          <h2>Welcome to Chocolate Room</h2>
         </div>
         </div>
         )

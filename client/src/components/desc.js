@@ -56,7 +56,7 @@ export default class Desc extends Component{
     
    render() {
        if(this.state.comments){
-        var comment = this.state.comments.map(comment => <div key={comment._id} style={{display:"block", textAlign:"left", margin:"10 20"}}>
+        var comment = this.state.comments.map(comment => <div className="singleComment" key={comment._id}>
                                                             <strong>{comment.name}</strong>
                                                             <p>{comment.review}</p>
                                                         </div>)
@@ -75,9 +75,13 @@ export default class Desc extends Component{
                         <button>
                             Leave a review
                         </button>
-                    </form>
-                    {comment}
+                    </form>    
+                <div className="comments">
+                {comment}
+                </div>             
                 </div>
+
+             
             </div>
         )
    }

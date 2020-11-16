@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 const express = require("express"),
      mongoose = require("mongoose"),
      cors     = require("cors"),
@@ -7,16 +7,17 @@ const express = require("express"),
      itemsPage = require("./routes/api/items"),
      auth = require("./auth/AuthController"),
      cookieParser = require('cookie-parser'),
-     path = require('path')
+     path = require('path');
  
 
 
-const app = express()
+const app = express();
 
-app.use(cookieParser())
-app.use(bodyParser.urlencoded({"extended": true}))
-app.use(bodyParser.json())
-app.use(cors())
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({"extended": true}));
+app.use(bodyParser.json());
+
+app.use(cors());
 
 
 
@@ -26,22 +27,22 @@ mongoose.connect(`mongodb+srv://${user}:${pass}@data.fee59.mongodb.net/sampleRea
     useNewUrlParser: true,
     useUnifiedTopology:true
 }).then(()=>console.log("connected to mongo"))
-    .catch(err => console.log(err))
+    .catch(err => console.log(err));
 
 
 if(process.env.NODE_ENV === 'production') { 
     app.use(express.static(path.join(__dirname, 'client/build')));
-    app.get('*', (req, res) => {    res.sendFile(path.join(__dirname, 'client/build/index.html'));  })
+    app.get('*', (req, res) => {    res.sendFile(path.join(__dirname, 'client/build/index.html'));  });
     }
     
-app.use("/api/comments/", commentPage)
-app.use("/api/items", itemsPage)
-app.use("/user", auth)
+app.use("/api/comments/", commentPage);
+app.use("/api/items", itemsPage);
+app.use("/user", auth);
 
 
-// const port = process.env.PORT || 3000;
-const port=3000
+const port = process.env.PORT || 3000;
+// const port=3000;
 
-app.listen(port, ()=>console.log(`server running on port ${port}`))
+app.listen(port, ()=>console.log(`server running on port ${port}`));
 
-module.exports = app
+module.exports = app;

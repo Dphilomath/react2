@@ -10,9 +10,9 @@ class LogoutButton extends React.Component{
         fetch("/user/logout", {
             method:"get"
         }).then(res=>res.json).then(res=>{
-            if (res.status===200)  
+            // if (res.status===200)  
                 this.props.history.push("/")
-            else console.log(res)
+            // else console.log(res)
         })
     }
     render(){
