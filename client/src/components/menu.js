@@ -18,7 +18,7 @@ export default class Menu extends Component
     componentDidMount() {
         fetch("/api/items",{
             headers:{
-                'Accept':'applocation/json'
+                'Accept':'application/json'
             }
         })
         .then(response => response.json())
