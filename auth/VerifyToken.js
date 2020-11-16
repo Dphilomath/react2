@@ -13,7 +13,7 @@ function verifyToken(req, res, next) {
     
   jwt.verify(token,'supersecret', function(err, decoded) {
     if (err){
-      console.log(err)
+      // console.log(err)
       return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' })
 
     }
